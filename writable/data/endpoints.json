@@ -1,0 +1,115 @@
+{
+	"GET":{
+		"controller/temp": {
+			"params": {
+				"data": "required",
+				"request": "required",
+				"record_id": "optional"
+			}
+		},
+		"comments/list": {
+			"params": {
+				"resource": "",
+				"resource_id": "",
+				"last_reply_id": ""
+			}
+		},
+		"analytics/load": {
+			"params": {
+				"_module": "",
+				"_date_range": "",
+				"user_id": "",
+				"client_id": ""
+			}
+		},
+		"users/list": { 
+			"params": {
+				"record_id": "This is the unique id of the record to load.",
+				"limit": "The number of rows to return",
+				"name": "Filter the users list using the name of the member",
+				"gender": "The gender of the users to load",
+				"date_of_birth": "A range can be used separated with a |",
+				"client_id": "Filter by the client id."
+			}
+		},
+		"finance/analytics": {
+			"params": {
+				
+			}
+		}
+	},
+	"POST":{
+		"auth/ajax_cronjob": {"params": {}},
+		"auth/unlock": {"params": {"password": "required"}},
+		"auth/_login": {
+			"params": {
+				"username": "required - The username/email for the account",
+				"password": "required - The user password",
+				"rememberme": "optional parameter"
+			}
+		},
+		"auth/logout": {"params": {}},
+		"media/upload": {
+			"params": {
+				"resource": "required",
+				"resource_id": "required"
+			}
+		},
+		"controller/_delete": {
+			"params": {
+				"resource": "required",
+				"resource_id": "required"
+			}
+		},
+		"controller/_validate": {
+			"params": {
+				"resource": "required",
+				"resource_id": "required"
+			}
+		},
+		"media/attachments": {
+			"params": {
+				"attachment_file_upload":"", 
+				"module":"required",
+				"label":"required", 
+				"item_id":"required",
+				"accept":""
+			}
+		},
+		"users/save": {"params": {}},
+		"users/_save": {"params": {}},
+		"users/avatar": {
+			"params": {
+				"avatar": "required",
+				"member_id": "required"
+			}
+		},
+		"users/submit": {"params": {}},
+		"comments/save": {
+			"params": {
+				"resource_id": "required",
+				"resource": "required",
+				"comment": "required"
+			}
+		},
+		"support/contact": {
+			"params": {
+				"name": "required - This is the fullname of the user.", 
+				"email": "required - This field is for a valid email address of the user.", 
+				"subject":"This contains the subject of the message.", 
+				"comments": "required - This is the full message being sent out by the user.",
+				"form_hash": "required - This is the message hash for security check."
+			}
+		},
+		"finance/save": {
+			"params": {}
+		},
+		"finance/declare": {
+			"params": {
+				"week": "required - The week to declare the data.",
+				"declared_by": "required - The unique id of the person making the declaration.",
+				"allocations": "required - This is an array of the allocations being made by the user."
+			}
+		}
+	}
+}
